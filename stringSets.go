@@ -44,6 +44,15 @@ func (set *StringSet) ToSlice() (slice []string) {
 	return slice
 }
 
+// This is needed for the AWS Go SDK
+func (set *StringSet) ToPtrSlice() (slice []*string) {
+	for s := range set.Set {
+		slice = append(slice, &s)
+	}
+
+	return slice
+}
+
 func (set *StringSet) Intersection(set1 *StringSet) *StringSet {
 	var output = NewStringSet()
 
