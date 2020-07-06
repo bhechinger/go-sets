@@ -1,1 +1,1 @@
-module "go-sets"
+module github.com/bhechinger/go-sets
